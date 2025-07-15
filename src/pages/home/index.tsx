@@ -13,12 +13,12 @@ export default function Home() {
   return (
     <div className="px-4 sm:px-8 md:px-20 lg:px-0 lg:container mx-auto">
       <div className="flex flex-col items-center">
-        <section className="min-h-[80vh] lg:min-h-screen max-w-3xl xl:max-w-5xl w-full flex flex-col lg:flex-row justify-center items-center gap-2 md:gap-5 relative">
+        <section className="min-h-screen max-w-3xl xl:max-w-5xl w-full flex flex-col lg:flex-row justify-center items-center gap-2 md:gap-5 relative">
           {/* React Logo Background Overlay */}
           <img
             src={reactLogo}
             alt="React Logo Background"
-            className="fixed right-30 top-1/2 -translate-y-1/2 w-[30%] h-auto opacity-[.02] pointer-events-none select-none z-0"
+            className="fixed sm:right-30 sm:top-1/2 -translate-y-1/2 w-[100%] sm:w-[30%] h-auto opacity-[.02] pointer-events-none select-none z-0"
             style={{ objectFit: "contain" }}
             aria-hidden="true"
           />
@@ -114,7 +114,7 @@ export default function Home() {
               <a href="#about-me">
                 <Button
                   size={"lg"}
-                  className="w-full sm:w-auto inline-flex items-center gap-2 transition-all duration-300 text-accent border border-accent hover:-translate-y-[4px] hover:-translate-x-[4px] hover:shadow-[3px_3px_0_0_rgba(61,241,218)]"
+                  className="w-auto inline-flex items-center gap-2 transition-all duration-300 text-accent border border-accent hover:-translate-y-[4px] hover:-translate-x-[4px] hover:shadow-[3px_3px_0_0_rgba(61,241,218)]"
                 >
                   Learn more about me
                   <ChevronRight />
@@ -142,17 +142,17 @@ export default function Home() {
           <p className="text-accent font-fira-code text-lg mb-4">
             04. What’s Next?
           </p>
-          <h2 className="text-[56px] md:text-[64px] font-bold text-slate-200 mb-6 text-center">
+          <h2 className="text-[46px] font-bold text-slate-200 text-center">
             Get In Touch
           </h2>
-          <p className="max-w-2xl text-slate-400 text-center text-xl mb-12">
+          <p className="max-w-2xl text-slate-400 text-center mb-12">
             I’m currently looking for new opportunities! If you have a question,
             want to collaborate, or just want to say hi, my inbox is always
             open. I’ll do my best to get back to you!
           </p>
           <a
             href="mailto:sasiang64@gmail.com"
-            className="px-10 py-5 border-2 border-accent text-accent rounded-lg font-fira-code text-2xl hover:bg-accent/30 hover:text-background transition-all duration-300 shadow-md text-center"
+            className="px-6 py-3 border-2 border-accent text-accent rounded-lg font-fira-code text-2xl hover:bg-accent/30 hover:text-background transition-all duration-300 shadow-md text-center"
           >
             Say Hello
           </a>
