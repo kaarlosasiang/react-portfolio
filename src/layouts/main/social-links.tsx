@@ -25,7 +25,7 @@ const SOCIAL_LINKS = [
 
 export default function SocialLinks() {
   return (
-    <div className="fixed left-16 bottom-0 flex flex-col w-auto justify-center gap-10">
+    <div className="hidden lg:flex fixed left-16 bottom-0 flex-col w-auto justify-center gap-10">
       {SOCIAL_LINKS.map((social) => {
         const Icon = social.icon;
         return (

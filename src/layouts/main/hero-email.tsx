@@ -1,7 +1,7 @@
 
 export default function HeroEmail() {
   return (
-    <div className="fixed right-16 w-3 bottom-0">
+    <div className="hidden lg:block fixed right-16 w-3 bottom-0">
       <p className="tracking-widest rotate-90 font-fira-code text-white text-sm mb-[180px]">
         sasiang64@gmail.com
       </p>
