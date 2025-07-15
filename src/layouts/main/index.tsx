@@ -12,13 +12,14 @@ export default function MainLayout() {
         <meta name="description" content="Portfolio website of Kaarlo Sasiang, showcasing projects, experience, and skills." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" href="/src/assets/logo.png" />
-        
+
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content="Kaarlo Sasiang | Portfolio" />
         <meta property="og:description" content="Portfolio website of Kaarlo Sasiang, showcasing projects, experience, and skills." />
         <meta property="og:image" content="/metadata-banner.png" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://your-domain.com/" />
+        <meta property="og:url" content="https://kaarlosasiang.vercel.app/" />
+
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Kaarlo Sasiang | Portfolio" />
