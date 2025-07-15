@@ -43,16 +43,6 @@ export default function ExperienceSection() {
               Implementing APIs to facilitate seamless data exchange between the
               portal and external systems.
             </li>
-            <li className="task-item text-xs sm:text-sm font-light">
-              Building a comprehensive Multi-Level Marketing (MLM)
-              functionality, enabling lead generation, customer management, and
-              real-time tracking.
-            </li>
-            <li className="task-item text-xs sm:text-sm font-light">
-              Empowering GHI+ to deliver exceptional customer service,
-              transparent pricing, and high-quality hurricane protection and
-              solar systems to South Florida homeowners.
-            </li>
           </ul>
         </div>
         {/* Wozinga Experience */}
