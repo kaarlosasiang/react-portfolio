@@ -1,4 +1,3 @@
-import React from "react";
 import reactLogo from "@/assets/react.svg";
 import nextLogo from "@/assets/nextjs.svg";
 import tailwindLogo from "@/assets/tailwind.svg";

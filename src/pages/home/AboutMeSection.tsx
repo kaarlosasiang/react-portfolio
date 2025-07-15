@@ -1,4 +1,3 @@
-import React from "react";
 import gradPic from "@/assets/grad-pic.png";
 
 export default function AboutMeSection() {

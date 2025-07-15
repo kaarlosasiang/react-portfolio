@@ -2,7 +2,6 @@ import workSample1 from "@/assets//work-sample-1.png";
 import workSample2 from "@/assets//work-sample-2.png";
 import workSample3 from "@/assets//work-sample-3.png";
 import { ExternalLink, Github } from "lucide-react";
-import React from "react";
 
 export default function ProjectsSection() {
   const projects = [
