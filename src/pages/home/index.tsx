@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="px-4 sm:px-8 md:px-20 lg:px-0 lg:container mx-auto">
       <div className="flex flex-col items-center">
-        <section className="min-h-screen max-w-3xl xl:max-w-5xl w-full flex flex-col lg:flex-row justify-center items-center gap-2 md:gap-5 relative">
+        <section className="min-h-[70vh] md:min-h-screen max-w-3xl xl:max-w-5xl w-full flex flex-col lg:flex-row justify-center items-center gap-2 md:gap-5 relative">
           {/* React Logo Background Overlay */}
           <img
             src={reactLogo}

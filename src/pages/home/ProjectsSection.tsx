@@ -78,20 +78,24 @@ export default function ProjectsSection() {
                     {project.tech.join(" ")}
                   </div>
                   <div className="flex gap-4 mt-2 text-white">
-                    <a
-                      href={project.github}
-                      className="hover:text-accent transition"
-                      aria-label="GitHub"
-                    >
-                      <Github size={22} />
-                    </a>
-                    <a
-                      href={project.external}
-                      className="hover:text-accent transition"
-                      aria-label="External Link"
-                    >
-                      <ExternalLink size={22} />
-                    </a>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        className="hover:text-accent transition"
+                        aria-label="GitHub"
+                      >
+                        <Github size={22} />
+                      </a>
+                    )}
+                    {project.external && (
+                      <a
+                        href={project.external}
+                        className="hover:text-accent transition"
+                        aria-label="External Link"
+                      >
+                        <ExternalLink size={22} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
