@@ -54,7 +54,7 @@ export default function TerminalPromptBar() {
         main
       </span>
       {/* Checkmark */}
-      <span className="bg-blue-400 rounded-r-full text-white px-1 sm:px-2 py-1 flex items-center min-w-0">
+      <span className="bg-blue-400 rounded-r-full text-white px-1 sm:px-2 py-0.5 sm:py-1 flex items-center min-w-0">
         <Check size={16} />
       </span>
       {/* Command */}
