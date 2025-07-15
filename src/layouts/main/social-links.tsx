@@ -32,7 +32,7 @@ export default function SocialLinks() {
           <a
             key={social.label}
             href={social.link}
-            className="text-white flex justify-center"
+            className="text-white transition-all duration-200 hover:text-accent hover:-translate-y-[4px] flex justify-center"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.label}
