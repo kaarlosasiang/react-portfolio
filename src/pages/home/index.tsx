@@ -24,7 +24,7 @@ export default function Home() {
           />
           <div className="flex-1 flex flex-col justify-center items-start gap-2 md:gap-5 z-10 w-full">
             <motion.p
-              className="text-accent text-lg font-FiraCode"
+              className="text-accent text-lg font-fira-code"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
