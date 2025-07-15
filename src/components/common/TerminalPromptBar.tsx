@@ -16,13 +16,13 @@ export default function TerminalPromptBar() {
     .toLocaleString("en-US", { month: "short" })
     .toLowerCase();
   return (
-    <div className="flex items-center gap-1  text-base font-mono select-none">
+    <div className="flex flex-wrap items-center gap-1 text-sm sm:text-base font-mono select-none overflow-x-auto w-full">
       {/* Month */}
-      <span className="bg-yellow-400 text-slate-900 px-3 rounded-l-full font-bold capitalize">
+      <span className="bg-yellow-400 text-slate-900 px-2 sm:px-3 rounded-l-full font-bold capitalize min-w-0">
         {month}
       </span>
       {/* Folder */}
-      <span className="bg-orange-400 text-white px-3 font-bold flex items-center">
+      <span className="bg-orange-400 text-white px-2 sm:px-3 font-bold flex items-center min-w-0">
         <svg
           className="w-4 h-4 mr-1"
           fill="none"
@@ -39,7 +39,7 @@ export default function TerminalPromptBar() {
         kaarlo
       </span>
       {/* Git branch */}
-      <span className="bg-green-400 text-slate-900 px-3 font-bold flex items-center">
+      <span className="bg-green-400 text-slate-900 px-2 sm:px-3 font-bold flex items-center min-w-0">
         <svg
           className="w-4 h-4 mr-1"
           fill="none"
@@ -54,15 +54,15 @@ export default function TerminalPromptBar() {
         main
       </span>
       {/* Checkmark */}
-      <span className="bg-blue-400 rounded-r-full text-white px-2 py-1 flex items-center">
+      <span className="bg-blue-400 rounded-r-full text-white px-1 sm:px-2 py-1 flex items-center min-w-0">
         <Check size={16} />
       </span>
       {/* Command */}
-      <span className="bg-transparent text-slate-300 px-3 py-1 font-mono">
+      <span className="bg-transparent text-slate-300 px-2 sm:px-3 py-1 font-mono min-w-0">
         hello world!
       </span>
       {/* Shell and time */}
-      <span className="ml-2 text-slate-400">
+      <span className="ml-2 text-slate-400 min-w-0">
         in <span className="text-blue-400">zsh</span> at{" "}
         <span className="text-blue-400">{time}</span>
       </span>

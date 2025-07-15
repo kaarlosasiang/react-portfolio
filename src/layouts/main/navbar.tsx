@@ -1,4 +1,5 @@
 import logo from "@/assets/logo.png";
+import resume from "@/assets/Resume.pdf";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
@@ -61,9 +62,14 @@ export default function NavBar() {
             ))}
           </ul>
 
-          <Button className="inline-flex items-center gap-2 transition-all duration-300 text-accent border border-accent hover:-translate-y-[4px] hover:-translate-x-[4px] hover:shadow-[3px_3px_0_0_rgba(61,241,218)]">
+          <a
+            href={resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 transition-all duration-300 text-accent border border-accent hover:-translate-y-[4px] hover:-translate-x-[4px] hover:shadow-[3px_3px_0_0_rgba(61,241,218)] px-4 py-2 rounded"
+          >
             Resume
-          </Button>
+          </a>
         </nav>
 
         {/* Mobile Nav */}
@@ -96,9 +102,14 @@ export default function NavBar() {
                   ))}
                 </ul>
                 <div className="mt-auto px-6 pb-8">
-                  <Button className="w-full text-accent border border-accent">
+                  <a
+                    href={resume}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full text-accent border border-accent flex items-center justify-center px-4 py-2 rounded"
+                  >
                     Resume
-                  </Button>
+                  </a>
                 </div>
               </div>
             </SheetContent>

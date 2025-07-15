@@ -11,9 +11,9 @@ import reactLogo from "@/assets/react.svg";
 
 export default function Home() {
   return (
-    <div className="px-20 lg:px-0 lg:container mx-auto">
+    <div className="px-4 sm:px-8 md:px-20 lg:px-0 lg:container mx-auto">
       <div className="flex flex-col items-center">
-        <section className="h-screen max-w-3xl xl:max-w-5xl w-full flex flex-col lg:flex-row justify-center items-center gap-2 md:gap-5 relative">
+        <section className="min-h-[80vh] lg:min-h-screen max-w-3xl xl:max-w-5xl w-full flex flex-col lg:flex-row justify-center items-center gap-2 md:gap-5 relative">
           {/* React Logo Background Overlay */}
           <img
             src={reactLogo}
@@ -22,7 +22,7 @@ export default function Home() {
             style={{ objectFit: "contain" }}
             aria-hidden="true"
           />
-          <div className="flex-1 flex flex-col justify-center items-start gap-2 md:gap-5 z-10">
+          <div className="flex-1 flex flex-col justify-center items-start gap-2 md:gap-5 z-10 w-full">
             <motion.p
               className="text-accent text-lg font-FiraCode"
               initial={{ opacity: 0, y: 40 }}
@@ -38,7 +38,7 @@ export default function Home() {
               Hi, my name is
             </motion.p>
             <motion.h1
-              className="transition-all duration-300 font-semibold text-slate-200 leading-[40px] text-[40px] md:text-[60px] 2xl:font-bold 2xl:lg:text-[80px]"
+              className="transition-all duration-300 font-semibold text-slate-200 leading-[40px] text-3xl sm:text-4xl md:text-[60px] 2xl:font-bold 2xl:lg:text-[80px] break-words"
               initial={{ opacity: 0, x: -60 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{
@@ -53,7 +53,7 @@ export default function Home() {
             </motion.h1>
 
             <motion.h2
-              className="transition-all duration-300 font-semibold text-slate-400 leading-[40px] lg:leading-[50px] 2xl:leading-[80px] text-[30px] md:text-[50px] 2xl:text-[60px]"
+              className="transition-all duration-300 font-semibold text-slate-400 leading-[36px] sm:leading-[40px] lg:leading-[50px] 2xl:leading-[80px] text-2xl sm:text-3xl md:text-[50px] 2xl:text-[60px] break-words"
               initial={{ opacity: 0, x: 60 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{
@@ -68,6 +68,7 @@ export default function Home() {
             </motion.h2>
             {/* Dynamic Terminal Prompt Bar */}
             <motion.div
+              className="w-full max-w-full"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -82,7 +83,7 @@ export default function Home() {
             </motion.div>
 
             <motion.p
-              className="max-w-[640px] text-slate-400 text-justify"
+              className="max-w-full sm:max-w-[640px] text-slate-400 text-justify text-base sm:text-lg"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -99,7 +100,7 @@ export default function Home() {
               development skills to the next level.
             </motion.p>
             <motion.div
-              className="mt-5"
+              className="mt-5 w-full max-w-xs sm:max-w-sm md:max-w-md"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
@@ -110,13 +111,15 @@ export default function Home() {
                 delay: 1.05,
               }}
             >
-              <Button
-                size={"lg"}
-                className="inline-flex items-center gap-2 transition-all duration-300 text-accent border border-accent hover:-translate-y-[4px] hover:-translate-x-[4px] hover:shadow-[3px_3px_0_0_rgba(61,241,218)]"
-              >
-                Learn more about me
-                <ChevronRight />
-              </Button>
+              <a href="#about-me">
+                <Button
+                  size={"lg"}
+                  className="w-full sm:w-auto inline-flex items-center gap-2 transition-all duration-300 text-accent border border-accent hover:-translate-y-[4px] hover:-translate-x-[4px] hover:shadow-[3px_3px_0_0_rgba(61,241,218)]"
+                >
+                  Learn more about me
+                  <ChevronRight />
+                </Button>
+              </a>
             </motion.div>
           </div>
           {/* <div className="flex-1 flex justify-center items-center mt-10 lg:mt-0 z-0">
