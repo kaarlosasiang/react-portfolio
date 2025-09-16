@@ -18,7 +18,7 @@ export default function Home() {
           <img
             src={reactLogo}
             alt="React Logo Background"
-            className="fixed sm:right-30 sm:top-1/2 -translate-y-1/2 w-[100%] sm:w-[30%] h-auto opacity-[.02] pointer-events-none select-none z-0"
+            className="fixed sm:right-30 sm:top-1/2 animate-spin [animation-duration:50s] -translate-y-1/2 w-[100%] sm:w-[30%] h-auto opacity-[.02] pointer-events-none select-none z-0"
             style={{ objectFit: "contain" }}
             aria-hidden="true"
           />
