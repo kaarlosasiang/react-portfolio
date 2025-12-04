@@ -1,8 +1,14 @@
 import { CustomDock } from "@/components/common/custom-dock";
 import { HeaderSection } from "@/components/common/header-section";
 import { AboutCard } from "@/components/common/about-card";
-import { CertificatesList, type CertificateItem } from "@/components/common/certificates-list";
-import { ExperienceTimeline, type ExperienceItem } from "@/components/common/experience-timeline";
+import {
+  CertificatesList,
+  type CertificateItem,
+} from "@/components/common/certificates-list";
+import {
+  ExperienceTimeline,
+  type ExperienceItem,
+} from "@/components/common/experience-timeline";
 import { TechStackCategories } from "@/components/common/tech-stack-categories";
 import {
   ProjectList,
@@ -12,7 +18,11 @@ import {
 // Types are imported from components
 
 const certificates: CertificateItem[] = [
-  { title: "JavaScript Algorithms and Data Structures", issuer: "freeCodeCamp", date: "2023" },
+  {
+    title: "JavaScript Algorithms and Data Structures",
+    issuer: "freeCodeCamp",
+    date: "2023",
+  },
   { title: "React Developer", issuer: "Meta (Coursera)", date: "2024" },
   { title: "Backend Development", issuer: "HackerRank", date: "2024" },
 ];
@@ -85,14 +95,36 @@ const techCategories = {
     "Next.js",
     "TypeScript",
     "JavaScript",
-    "HTML",
-    "CSS",
+    "Tailwind CSS",
     "Shadcn UI",
-    "Bootstrap",
+    "Vite",
+    "ESLint",
+    "Prettier",
   ],
-  Backend: ["Node.js", "Express", "Prisma", "Firebase"],
-  DevOps: ["Docker", "GitHub Actions", "Vercel"],
-  Tools: ["Git", "GitHub", "Figma", "WordPress"],
+  Backend: [
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Prisma",
+    "OAuth",
+    "JWT",
+    "REST",
+    "Firebase",
+    "Appwrite",
+    "Supabase",
+  ],
+  DevOps: ["Docker", "GitHub Actions", "Vercel", "Render"],
+  Tools: [
+    "Git",
+    "GitHub",
+    "VS Code",
+    "WebStorm",
+    "Postman",
+    "Trello",
+    "Teams",
+    "Discord",
+    "Figma",
+  ],
 };
 
 export default function Home() {

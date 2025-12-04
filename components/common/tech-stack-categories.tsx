@@ -20,7 +20,7 @@ export function TechStackCategories({ categories, className }: TechStackCategori
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1  gap-4">
           {entries.map(([category, items]) => (
             <div key={category} className="space-y-2">
               <h4 className="text-sm font-semibold">{category}</h4>

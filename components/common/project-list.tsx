@@ -16,7 +16,7 @@ type ProjectListProps = {
 
 export function ProjectList({ projects }: ProjectListProps) {
   return (
-    <Card className="col-span-8 -mt-25">
+    <Card className="col-span-8">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <ToolCase size={16} />

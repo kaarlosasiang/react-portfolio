@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { BadgeCheck, ChevronRight, FileUser, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 
 type HeaderSectionProps = {
   name: string;
@@ -12,12 +13,22 @@ type HeaderSectionProps = {
 export function HeaderSection({ name, location, title }: HeaderSectionProps) {
   return (
     <div className="flex justify-between">
-      <div className="flex space-x-6">
+      <div className="flex items-start space-x-6">
+        <Image
+          src="/kaarlo.jpg"
+          alt={`${name}'s profile picture`}
+          width={150}
+          height={150}
+          className="rounded-md"
+        />
         <div className="flex flex-col justify-between gap-3">
           <div>
             <h1 className={`text-3xl font-bold tracking-tighter`}>
               {name}
-              <BadgeCheck className="inline-block ml-1 fill-blue-400 text-white" size={18} />
+              <BadgeCheck
+                className="inline-block ml-1 fill-blue-400 text-white"
+                size={18}
+              />
             </h1>
             <p className="flex items-center text-sm gap-1">
               <MapPin size={14} />
