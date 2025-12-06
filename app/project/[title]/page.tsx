@@ -1,7 +1,4 @@
-"use client";
-
-import React from "react";
-import { getProjectBySlug, getRelatedProjects } from "@/lib/projects-data";
+import { getProjectBySlug, getRelatedProjects, projectsData } from "@/lib/projects-data";
 import { RelatedProjects } from "@/components/common/related-projects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -14,9 +11,9 @@ import Image from "next/image";
 export default function ProjectDetailPage({
   params,
 }: {
-  params: Promise<{ title: string }>;
+  params: { title: string };
 }) {
-  const { title } = React.use(params);
+  const { title } = params;
   const project = getProjectBySlug(title);
   const relatedProjects = project ? getRelatedProjects(project.id) : [];
 
@@ -212,4 +209,8 @@ export default function ProjectDetailPage({
       </article>
     </div>
   );
+}
+
+export function generateStaticParams() {
+  return projectsData.map((project) => ({ title: project.slug }));
 }
