@@ -4,7 +4,7 @@ import { Highlighter } from "@/components/ui/highlighter";
 
 export function AboutCard() {
   return (
-    <Card className="col-span-8">
+    <Card className="col-span-12 md:col-span-8">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Briefcase size={16} />

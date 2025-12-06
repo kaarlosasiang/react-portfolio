@@ -96,7 +96,7 @@ export function CustomDock() {
   return (
     <div className="flex flex-col items-center justify-center fixed bottom-5 left-1/2 transform -translate-x-1/2">
       <TooltipProvider>
-        <Dock direction="middle">
+        <Dock direction="middle" className="shadow-lg">
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>
               <Tooltip>

@@ -15,7 +15,7 @@ type ExperienceTimelineProps = {
 
 export function ExperienceTimeline({ items }: ExperienceTimelineProps) {
   return (
-    <Card className="col-span-4">
+    <Card className="col-span-12 md:col-span-4">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Briefcase size={16} />

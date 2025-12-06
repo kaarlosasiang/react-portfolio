@@ -12,19 +12,30 @@ import {
 import { TechStackCategories } from "@/components/common/tech-stack-categories";
 import {
   ProjectList,
-  type ProjectItem,
 } from "@/components/common/project-list";
+import { getProjectsList } from "@/lib/projects-data";
 
 // Types are imported from components
 
 const certificates: CertificateItem[] = [
   {
-    title: "JavaScript Algorithms and Data Structures",
-    issuer: "freeCodeCamp",
-    date: "2023",
+    title: "DevFest 2025 Participant",
+    issuer: "GDG Davao",
+    date: "2025",
+    imageUrl: "/devfest_davao_2025.png",
   },
-  { title: "React Developer", issuer: "Meta (Coursera)", date: "2024" },
-  { title: "Backend Development", issuer: "HackerRank", date: "2024" },
+  {
+    title: "DevFest 2023 Participant",
+    issuer: "GDG Davao",
+    date: "2023",
+    imageUrl: "/devfest_davao_2023.jpg",
+  },
+  {
+    title: "DOCT Python Programming Essential Course",
+    issuer: "DICT-XI",
+    date: "2023",
+    imageUrl: "/dict-xi-python-essentials.jpg",
+  },
 ];
 
 const experienceItems: ExperienceItem[] = [
@@ -50,44 +61,7 @@ const experienceItems: ExperienceItem[] = [
   },
 ];
 
-const projects: ProjectItem[] = [
-  {
-    title: "Accounting Software",
-    description:
-      "Accounting software thesis for BS AgriBusiness Management; I was hired to build it.",
-    tags: [
-      "Next.js",
-      "Express",
-      "TypeScript",
-      "Multi-tenant",
-      "Better Auth",
-      "Shadcn UI",
-    ],
-    href: "#",
-    inProgress: true,
-  },
-  {
-    title: "TransitMaster",
-    description:
-      "TransitMaster is a school vehicle management system for real-time monitoring, route planning, and usage analytics to keep transportation safe and organized.",
-    tags: ["React", "Express", "Mapbox", "IoT"],
-    href: "#",
-  },
-  {
-    title: "AceTrack",
-    description:
-      "Attendance management system for a school organization with member check-ins, event tracking, and role-based access.",
-    tags: ["React", "Shadcn UI", "Auth", "Multi-tenant"],
-    href: "#",
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "Modern responsive portfolio with smooth animations and clean design.",
-    tags: ["Next.js", "Shadcn UI", "Framer Motion"],
-    href: "#",
-  },
-];
+const projects = getProjectsList();
 
 const techCategories = {
   Frontend: [
@@ -129,13 +103,13 @@ const techCategories = {
 
 export default function Home() {
   return (
-    <div className={`h-full max-w-4xl mx-auto py-5 space-y-5`}>
+    <div className={`h-full max-w-4xl mx-auto py-5 space-y-5 px-5 lg:px-0 pb-20`}>
       <HeaderSection
         name="Kaarlo Sasiang"
         location="Lupon, Davao Oriental, Philippines"
         title="Full Stack Web Developer"
       />
-      <div className="grid lg:grid-cols-12 gap-3 items-start">
+      <div className="grid sm:grid-cols-12 gap-3 items-start">
         <AboutCard />
 
         <ExperienceTimeline items={experienceItems} />
