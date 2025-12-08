@@ -51,7 +51,7 @@ const experienceItems: ExperienceItem[] = [
   },
   {
     title: "BS Information Technology",
-    company: "Davao Oriental State College",
+    company: "Davao Oriental State University",
     period: "2021 - 2025",
   },
   {
