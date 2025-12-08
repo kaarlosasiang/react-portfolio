@@ -13,7 +13,7 @@ type HeaderSectionProps = {
 export function HeaderSection({ name, location, title }: HeaderSectionProps) {
   return (
     <div className="flex w-full justify-center md:justify-between">
-      <div className="flex flex-col items-center md:flex-row lg:items-start space-x-6">
+      <div className="flex flex-col items-center md:flex-row gap-3 md:gap-6 lg:items-start space-x-6">
         <Image
           src="/kaarlo.jpg"
           alt={`${name}'s profile picture`}
@@ -21,7 +21,7 @@ export function HeaderSection({ name, location, title }: HeaderSectionProps) {
           height={150}
           className="rounded-md mr-0"
         />
-        <div className="flex flex-col justify-between items-center md:items-start gap-3">
+        <div className="flex flex-col justify-between items-center md:items-start gap-3 md:mt-0">
           <div className="flex flex-col items-center md:items-start text-center md:text-start space-y-1">
             <h1 className={`text-3xl font-bold tracking-tighter`}>
               {name}
