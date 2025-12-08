@@ -19,7 +19,7 @@ export function HeaderSection({ name, location, title }: HeaderSectionProps) {
           alt={`${name}'s profile picture`}
           width={150}
           height={150}
-          className="rounded-md"
+          className="rounded-md mr-0"
         />
         <div className="flex flex-col justify-between items-center md:items-start gap-3">
           <div className="flex flex-col items-center md:items-start text-center md:text-start space-y-1">
