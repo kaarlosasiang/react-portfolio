@@ -42,7 +42,14 @@ export function HeaderSection({ name, location, title }: HeaderSectionProps) {
               View Resume
               <ChevronRight size={14} />
             </Button>
-            <Button size={"sm"} variant={"outline"} className="text-xs">
+            <Button
+              size={"sm"}
+              variant={"outline"}
+              className="text-xs"
+              onClick={() =>
+                (window.location.href = "mailto:sasiang64@gmail.com")
+              }
+            >
               <Mail />
               Send Email
             </Button>
