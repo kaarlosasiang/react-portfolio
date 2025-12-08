@@ -8,12 +8,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-export default function ProjectDetailPage({
+export default async function ProjectDetailPage({
   params,
 }: {
-  params: { title: string };
+  params: Promise<{ title: string }>;
 }) {
-  const { title } = params;
+  const { title } = await params;
   const project = getProjectBySlug(title);
   const relatedProjects = project ? getRelatedProjects(project.id) : [];
 
