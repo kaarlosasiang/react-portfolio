@@ -24,14 +24,19 @@ export const certificates: CertificateItem[] = [
 
 export const experienceItems: ExperienceItem[] = [
   {
-    title: "Full Stack Developer",
+    title: "Full Stack Web Developer",
     company: "Camillians Home Health Services",
     period: "2025 - Present",
   },
   {
-    title: "Frontend Web Developer",
-    company: "Freelance",
-    period: "2021 - 2025",
+    title: "Full Stack Web Developer",
+    company: "Green Home Improvements Plus",
+    period: "2023 - 2025",
+  },
+  {
+    title: "Frontend / Wordpress Developer",
+    company: "Wozinga Pty. Ltd.",
+    period: "2021 - 2023",
   },
   {
     title: "BS Information Technology",
