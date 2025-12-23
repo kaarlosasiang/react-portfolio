@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { BadgeCheck, ChevronRight, FileUser, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 type HeaderSectionProps = {
   name: string;
@@ -37,10 +38,12 @@ export function HeaderSection({ name, location, title }: HeaderSectionProps) {
           </div>
           <p>{title}</p>
           <div className="space-x-2">
-            <Button size={"sm"} className="text-xs">
-              <FileUser />
-              View Resume
-              <ChevronRight size={14} />
+            <Button size={"sm"} className="text-xs" asChild>
+              <Link href="https://docs.google.com/document/d/1dREqLj2wT2SpH8f6wYtEpNFU2BCxdsnwmCAzq_xqrQ4/edit?usp=sharing" target="_blank">
+                <FileUser />
+                View Resume
+                <ChevronRight size={14} />
+              </Link>
             </Button>
             <Button
               size={"sm"}

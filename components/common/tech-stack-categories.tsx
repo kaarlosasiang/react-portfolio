@@ -12,7 +12,7 @@ type TechStackCategoriesProps = {
 export function TechStackCategories({ categories, className }: TechStackCategoriesProps) {
   const entries = Object.entries(categories);
   return (
-    <Card className={className ?? "col-span-12 md:col-span-8 lg:-mt-8.5"}>
+    <Card className={className ?? "col-span-12 md:col-span-8 md:-mt-12"}>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <ToolCase size={16} />
