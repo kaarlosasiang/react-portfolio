@@ -25,14 +25,15 @@ export default function Home() {
         title="Full Stack Web Developer"
       />
       <div className="grid sm:grid-cols-12 gap-3 items-start">
-        <AboutCard />
-
-        <ExperienceTimeline items={experienceItems} />
-
-        <TechStackCategories categories={techCategories} />
-        <CertificatesList items={certificates} />
-
-        <ProjectList projects={projects} />
+        <div className="col-span-12 lg:col-span-8 flex flex-col gap-3">
+          <AboutCard />
+          <TechStackCategories categories={techCategories} />
+          <ProjectList projects={projects} />
+        </div>
+        <div className="col-span-12 lg:col-span-4 flex flex-col gap-3">
+          <ExperienceTimeline items={experienceItems} />
+          <CertificatesList items={certificates} />
+        </div>
       </div>
     </div>
   );
