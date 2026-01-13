@@ -1,4 +1,8 @@
-import { getProjectBySlug, getRelatedProjects, projectsData } from "@/lib/projects-data";
+import {
+  getProjectBySlug,
+  getRelatedProjects,
+  projectsData,
+} from "@/lib/projects-data";
 import { RelatedProjects } from "@/components/common/related-projects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -49,7 +53,6 @@ export default async function ProjectDetailPage({
 
       {/* Main content */}
       <article className="max-w-3xl mx-auto px-4 py-8 lg:py-12">
-
         {/* Hero section */}
         <div className="mb-12">
           <div className="mb-4 flex flex-wrap gap-2">
@@ -84,7 +87,11 @@ export default async function ProjectDetailPage({
           {/* CTA buttons */}
           <div className="flex flex-wrap gap-3 mb-8">
             {project.demoUrl && (
-              <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button className="gap-2">
                   <ExternalLink size={16} />
                   View Demo
@@ -92,7 +99,11 @@ export default async function ProjectDetailPage({
               </a>
             )}
             {project.githubUrl && (
-              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button variant="outline" className="gap-2">
                   <Github size={16} />
                   View Code
@@ -100,9 +111,7 @@ export default async function ProjectDetailPage({
               </a>
             )}
             {project.inProgress && (
-              <Badge className="h-10 px-4 flex items-center">
-                In Progress
-              </Badge>
+              <Badge className="h-10 px-4 flex items-center">In Progress</Badge>
             )}
           </div>
         </div>
@@ -142,7 +151,9 @@ export default async function ProjectDetailPage({
                 key={idx}
                 className="flex items-start gap-3 text-muted-foreground"
               >
-                <span className="text-primary font-bold mt-1 flex-shrink-0">✓</span>
+                <span className="text-primary font-bold mt-1 flex-shrink-0">
+                  ✓
+                </span>
                 <span>{feature}</span>
               </li>
             ))}
@@ -162,14 +173,14 @@ export default async function ProjectDetailPage({
         </section>
 
         {/* Results section */}
-        {project.results && (
+        {/* {project.results && (
           <section className="mb-12" id="results">
             <h2 className="text-2xl font-bold mb-4">Results & Impact</h2>
             <div className="bg-muted/50 border border-border rounded-lg p-6">
               <p className="text-base leading-relaxed">{project.results}</p>
             </div>
           </section>
-        )}
+        )} */}
 
         {/* Related Projects */}
         <RelatedProjects projects={relatedProjects} />
@@ -188,7 +199,11 @@ export default async function ProjectDetailPage({
           {(project.demoUrl || project.githubUrl) && (
             <div className="flex gap-3">
               {project.demoUrl && (
-                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button size="sm" className="gap-2">
                     <ExternalLink size={14} />
                     Demo
@@ -196,7 +211,11 @@ export default async function ProjectDetailPage({
                 </a>
               )}
               {project.githubUrl && (
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button size="sm" variant="outline" className="gap-2">
                     <Github size={14} />
                     Code

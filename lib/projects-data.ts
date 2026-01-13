@@ -82,10 +82,8 @@ export const projectsData: ProjectDetail[] = [
       "Real-time GPS tracking of all vehicles",
       "Interactive map visualization with Mapbox",
       "Intelligent route optimization",
-      "Student check-in/check-out system",
       "Driver and admin dashboards",
       "Usage analytics and reports",
-      "SMS/push notifications for parents",
     ],
     technologies: [
       "React",
@@ -135,43 +133,43 @@ export const projectsData: ProjectDetail[] = [
     image: "/acetrack_preview.png",
     relatedProjects: ["1", "2"],
   },
-  {
-    id: "4",
-    title: "Portfolio Website",
-    slug: "portfolio-website",
-    description:
-      "Modern responsive portfolio with smooth animations and clean design.",
-    tags: ["Next.js", "Shadcn UI", "Framer Motion"],
-    href: "/project/portfolio-website",
-    overview:
-      "A modern, responsive portfolio website built with Next.js showcasing skills, projects, and experience. Features smooth animations and a clean design to create an engaging user experience.",
-    challenge:
-      "Designing and building a portfolio that stands out while maintaining excellent performance, accessibility, and responsive design across all devices.",
-    solution:
-      "Leveraged Next.js for optimal performance with SSG and SSR. Implemented Framer Motion animations for smooth, engaging interactions. Used Shadcn UI components for consistent, accessible design. Carefully optimized images and fonts for fast loading.",
-    features: [
-      "Responsive design that works on all devices",
-      "Smooth scroll animations with Framer Motion",
-      "Dark/light theme support",
-      "Project showcase with detailed views",
-      "Experience timeline",
-      "Tech stack display",
-      "Certificate section",
-      "Fast loading with Next.js optimization",
-    ],
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Shadcn UI",
-      "Framer Motion",
-      "Tailwind CSS",
-    ],
-    results:
-      "Created a professional portfolio that effectively showcases projects and skills, serving as both a portfolio and a demonstration of modern web development practices.",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop",
-    relatedProjects: ["1", "3"],
-  },
+  // {
+  //   id: "4",
+  //   title: "Portfolio Website",
+  //   slug: "portfolio-website",
+  //   description:
+  //     "Modern responsive portfolio with smooth animations and clean design.",
+  //   tags: ["Next.js", "Shadcn UI", "Framer Motion"],
+  //   href: "/project/portfolio-website",
+  //   overview:
+  //     "A modern, responsive portfolio website built with Next.js showcasing skills, projects, and experience. Features smooth animations and a clean design to create an engaging user experience.",
+  //   challenge:
+  //     "Designing and building a portfolio that stands out while maintaining excellent performance, accessibility, and responsive design across all devices.",
+  //   solution:
+  //     "Leveraged Next.js for optimal performance with SSG and SSR. Implemented Framer Motion animations for smooth, engaging interactions. Used Shadcn UI components for consistent, accessible design. Carefully optimized images and fonts for fast loading.",
+  //   features: [
+  //     "Responsive design that works on all devices",
+  //     "Smooth scroll animations with Framer Motion",
+  //     "Dark/light theme support",
+  //     "Project showcase with detailed views",
+  //     "Experience timeline",
+  //     "Tech stack display",
+  //     "Certificate section",
+  //     "Fast loading with Next.js optimization",
+  //   ],
+  //   technologies: [
+  //     "Next.js",
+  //     "React",
+  //     "TypeScript",
+  //     "Shadcn UI",
+  //     "Framer Motion",
+  //     "Tailwind CSS",
+  //   ],
+  //   results:
+  //     "Created a professional portfolio that effectively showcases projects and skills, serving as both a portfolio and a demonstration of modern web development practices.",
+  //   image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop",
+  //   relatedProjects: ["1", "3"],
+  // },
 ];
 
 export function getProjectBySlug(slug: string) {

@@ -3,6 +3,12 @@ import type { ExperienceItem } from "@/components/common/experience-timeline";
 
 export const certificates: CertificateItem[] = [
   {
+    title: "Proficiency Examination for Computer Programming",
+    issuer: "DICT-XI",
+    date: "2025",
+    imageUrl: "/edps_cert.png",
+  },
+  {
     title: "DevFest 2025 Participant",
     issuer: "GDG Davao",
     date: "2025",
