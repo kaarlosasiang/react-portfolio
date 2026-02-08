@@ -2,8 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { BadgeCheck, ChevronRight, FileUser, Mail, MapPin } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 
 type HeaderSectionProps = {
   name: string;
@@ -15,7 +13,7 @@ export function HeaderSection({ name, location, title }: HeaderSectionProps) {
   return (
     <div className="flex w-full justify-center md:justify-between">
       <div className="flex flex-col items-center md:flex-row gap-3 md:gap-6 lg:items-start space-x-6">
-        <Image
+        <img
           src="/kaarlo.jpg"
           alt={`${name}'s profile picture`}
           width={150}
@@ -39,11 +37,11 @@ export function HeaderSection({ name, location, title }: HeaderSectionProps) {
           <p>{title}</p>
           <div className="space-x-2">
             <Button size={"sm"} className="text-xs" asChild>
-              <Link href="https://docs.google.com/document/d/1dREqLj2wT2SpH8f6wYtEpNFU2BCxdsnwmCAzq_xqrQ4/edit?usp=sharing" target="_blank">
+              <a href="https://docs.google.com/document/d/1dREqLj2wT2SpH8f6wYtEpNFU2BCxdsnwmCAzq_xqrQ4/edit?usp=sharing" target="_blank">
                 <FileUser />
                 View Resume
                 <ChevronRight size={14} />
-              </Link>
+              </a>
             </Button>
             <Button
               size={"sm"}

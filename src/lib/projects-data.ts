@@ -34,6 +34,7 @@ export const projectsData: ProjectDetail[] = [
       "Shadcn UI",
     ],
     href: "/project/accounting-software",
+    githubUrl: "https://github.com/kaarlosasiang/accounting-software",
     inProgress: true,
     overview:
       "A comprehensive accounting software solution built as a thesis project for BS AgriBusiness Management. This multi-tenant application provides robust financial management tools tailored for agricultural businesses.",
@@ -70,8 +71,7 @@ export const projectsData: ProjectDetail[] = [
       "TransitMaster is a school vehicle management system for real-time monitoring, route planning, and usage analytics to keep transportation safe and organized.",
     tags: ["React", "Express", "Mapbox", "IoT"],
     href: "/project/transit-master",
-    demoUrl: "https://transitmaster.example.com",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/kaarlosasiang/transitmaster_frontend",
     overview:
       "TransitMaster is a comprehensive vehicle management system designed specifically for schools. It provides real-time GPS tracking, intelligent route planning, and detailed usage analytics to ensure safe and efficient school transportation.",
     challenge:
@@ -106,6 +106,7 @@ export const projectsData: ProjectDetail[] = [
       "Attendance management system for a school organization with member check-ins, event tracking, and role-based access.",
     tags: ["React", "Shadcn UI", "Auth", "Multi-tenant"],
     href: "/project/ace-track",
+    demoUrl: "https://acetrack.vercel.app/",
     overview:
       "AceTrack is a modern attendance management system built for school organizations. It streamlines member tracking, event management, and provides detailed attendance analytics with an intuitive user interface.",
     challenge:
@@ -177,7 +178,17 @@ export function getProjectBySlug(slug: string) {
 }
 
 export function getProjectsList() {
-  return projectsData.map(({ overview, challenge, solution, features, results, relatedProjects, ...rest }) => rest);
+  return projectsData.map(
+    ({
+      overview,
+      challenge,
+      solution,
+      features,
+      results,
+      relatedProjects,
+      ...rest
+    }) => rest,
+  );
 }
 
 export function getRelatedProjects(projectId: string, limit: number = 2) {

@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ToolCase } from "lucide-react";
-import Image from "next/image";
 
 type TechStackGridProps = {
   images: string[];
@@ -20,7 +19,7 @@ export function TechStackGrid({ images, className }: TechStackGridProps) {
         <div className="flex flex-wrap gap-3">
           {images.map((src, index) => (
             <div key={index} className="relative w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-muted/80 transition-colors">
-              <Image src={src} alt={images[index]} width={24} unoptimized height={24} className="object-contain" />
+              <img src={src} alt={images[index]} width={24} height={24} className="object-contain" />
             </div>
           ))}
         </div>

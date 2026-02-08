@@ -1,7 +1,5 @@
-import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
 import type { ProjectDetail } from "@/lib/projects-data";
 
 type RelatedProjectsProps = {
@@ -16,15 +14,14 @@ export function RelatedProjects({ projects }: RelatedProjectsProps) {
       <h2 className="text-2xl font-bold mb-6">Related Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((project) => (
-          <Link key={project.id} href={`/project/${project.slug}`}>
+          <a key={project.id} href={`/project/${project.slug}`}>
             <Card className="overflow-hidden hover:border-primary/50 transition-colors h-full cursor-pointer pt-0">
               {project.image && (
                 <div className="relative h-32 w-full overflow-hidden bg-muted">
-                  <Image
+                  <img
                     src={project.image}
                     alt={project.title}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               )}
@@ -47,7 +44,7 @@ export function RelatedProjects({ projects }: RelatedProjectsProps) {
                 </div>
               </CardContent>
             </Card>
-          </Link>
+          </a>
         ))}
       </div>
     </section>

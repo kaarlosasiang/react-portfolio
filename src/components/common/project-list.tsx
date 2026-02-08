@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ToolCase } from "lucide-react";
-import Link from "next/link";
 
 export type ProjectItem = {
   title: string;
@@ -28,7 +27,7 @@ export function ProjectList({ projects }: ProjectListProps) {
       <CardContent>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {projects.map((proj, i) => (
-            <Link key={i} href={`/project/${proj.slug}`}>
+            <a key={i} href={`/project/${proj.slug}`}>
               <div className="rounded-lg border bg-card text-card-foreground p-3 hover:border-primary/50 hover:bg-muted/50 transition-colors cursor-pointer h-full">
                 <div className="flex items-start justify-between gap-2">
                   <div className="flex items-center gap-2">
@@ -54,7 +53,7 @@ export function ProjectList({ projects }: ProjectListProps) {
                   ))}
                 </div>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       </CardContent>

@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio - Kaarlo Sasiang
 
-## Getting Started
+A modern, performant portfolio website built with [Astro](https://astro.build) and React.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** Astro 5.x with React islands
+- **Styling:** Tailwind CSS v4
+- **UI Components:** Radix UI primitives
+- **Animations:** Motion (Motion One)
+- **Icons:** Lucide React
+- **Fonts:** Geist Sans & Geist Mono (via Fontsource)
+- **Build:** Static Site Generation (SSG)
+
+## 🏗️ Project Structure
+
+```
+├── public/              # Static assets
+├── src/
+│   ├── components/
+│   │   ├── common/      # Shared components (headers, cards, etc.)
+│   │   ├── ui/          # UI primitives (buttons, badges, etc.)
+│   │   └── providers/   # Context providers
+│   ├── layouts/         # Page layouts
+│   ├── lib/             # Utilities and data
+│   ├── pages/           # File-based routing
+│   │   ├── index.astro  # Home page
+│   │   └── project/     # Dynamic project pages
+│   └── styles/          # Global styles
+└── astro.config.mjs     # Astro configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18+ 
+- pnpm (recommended) or npm
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Install dependencies
+pnpm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Start dev server (usually at http://localhost:4321)
+pnpm run dev
+```
 
-## Deploy on Vercel
+### Build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Build for production
+pnpm run build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Preview production build
+pnpm run preview
+```
+
+## ✨ Features
+
+- **Island Architecture:** Interactive components hydrate only when needed
+- **Dark Mode:** Built-in theme switching with smooth transitions
+- **Responsive Design:** Mobile-first, fully responsive layout
+- **SEO Optimized:** Static generation for better SEO
+- **Fast Performance:** Minimal JavaScript, maximum speed
+- **Type Safe:** Full TypeScript support
+
+## 🎨 Customization
+
+### Updating Content
+
+- **Portfolio Data:** Edit `src/lib/portfolio-data.ts`
+- **Projects:** Edit `src/lib/projects-data.ts`
+- **Theme Colors:** Modify CSS variables in `src/styles/global.css`
+
+### Component Hydration Strategy
+
+Components use Astro's client directives:
+- `client:load` - Hydrate immediately (critical UI)
+- `client:idle` - Hydrate when browser is idle
+- `client:visible` - Hydrate when scrolled into view
+
+## 📦 Deployment
+
+This project is configured for static deployment and works great with:
+
+- **Vercel** (recommended)
+- **Netlify**
+- **Cloudflare Pages**
+- Any static hosting service
+
+The build outputs to `dist/` directory.
+
+## 🔧 Migration Notes
+
+This project was migrated from Next.js to Astro while:
+- Preserving all UI components (Radix UI as React islands)
+- Maintaining Tailwind CSS v4
+- Keeping the existing design system
+- Improving performance through partial hydration
+
+## 📝 License
+
+MIT
+

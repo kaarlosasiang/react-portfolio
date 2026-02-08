@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -96,7 +95,7 @@ export function CustomDock() {
             <DockIcon key={item.label}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Link
+                  <a
                     href={item.href}
                     aria-label={item.label}
                     className={cn(
@@ -105,7 +104,7 @@ export function CustomDock() {
                     )}
                   >
                     <item.icon className="size-4" />
-                  </Link>
+                  </a>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>{item.label}</p>
@@ -118,7 +117,7 @@ export function CustomDock() {
             <DockIcon key={name}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Link
+                  <a
                     href={social.url}
                     aria-label={social.name}
                     className={cn(
@@ -127,7 +126,7 @@ export function CustomDock() {
                     )}
                   >
                     <social.icon className="size-4" />
-                  </Link>
+                  </a>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>{name}</p>

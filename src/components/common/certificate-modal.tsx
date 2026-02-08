@@ -1,7 +1,6 @@
 "use client";
 
 import { Dialog, DialogContent, DialogHeader } from "@/components/ui/dialog";
-import Image from "next/image";
 import { X } from "lucide-react";
 import { DialogTitle } from "@radix-ui/react-dialog";
 
@@ -26,12 +25,10 @@ export function CertificateModal({
         </DialogHeader>
         <div className="relative w-full">
           <div className="relative w-full aspect-video sm:aspect-4/3">
-            <Image
+            <img
               src={imageUrl}
               alt={title}
-              fill
-              className="object-contain"
-              sizes="(max-width: 740px) 100vw, (max-width: 1024px) 100vw, 1000px"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>
