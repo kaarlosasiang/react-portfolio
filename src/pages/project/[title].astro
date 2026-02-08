@@ -1,0 +1,219 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import {
+  getProjectBySlug,
+  getRelatedProjects,
+  projectsData,
+} from '@/lib/projects-data';
+import { RelatedProjects } from '@/components/common/related-projects';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { ArrowLeft, Github, ExternalLink } from 'lucide-react';
+
+export async function getStaticPaths() {
+  return projectsData.map((project) => ({
+    params: { title: project.slug },
+  }));
+}
+
+const { title } = Astro.params;
+const project = getProjectBySlug(title);
+
+if (!project) {
+  return Astro.redirect('/404');
+}
+
+const relatedProjects = getRelatedProjects(project.id);
+---
+
+<BaseLayout title={`${project.title} - Kaarlo Sasiang`} description={project.description}>
+  <div class="min-h-screen bg-background">
+    {/* Mobile header */}
+    <div class="lg:hidden bg-muted/50 border-b sticky top-0 z-50">
+      <div class="flex items-center px-4 py-3">
+        <a href="/">
+          <Button client:load variant="ghost" size="sm" className="gap-2">
+            <ArrowLeft size={16} />
+            <span class="hidden sm:inline">Back</span>
+          </Button>
+        </a>
+      </div>
+    </div>
+
+    {/* Desktop header with back button */}
+    <div class="hidden lg:block bg-muted/50 border-b sticky top-0 z-40">
+      <div class="max-w-3xl mx-auto px-4 py-4">
+        <a href="/">
+          <Button client:load variant="ghost" size="sm" className="gap-2">
+            <ArrowLeft size={16} />
+            Back to Portfolio
+          </Button>
+        </a>
+      </div>
+    </div>
+
+    {/* Main content */}
+    <article class="max-w-3xl mx-auto px-4 py-8 lg:py-12">
+      {/* Hero section */}
+      <div class="mb-12">
+        <div class="mb-4 flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <Badge client:load key={tag} variant="outline">
+              {tag}
+            </Badge>
+          ))}
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+          {project.title}
+        </h1>
+
+        <p class="text-lg text-muted-foreground mb-6">
+          {project.description}
+        </p>
+
+        {/* Featured Image */}
+        {project.image && (
+          <div class="relative max-h-64 sm:max-h-80 aspect-video w-full rounded-lg overflow-hidden mb-6 bg-muted">
+            <img
+              src={project.image}
+              alt={project.title}
+              class="w-full h-full object-cover"
+            />
+          </div>
+        )}
+
+        {/* CTA buttons */}
+        <div class="flex flex-wrap gap-3 mb-8">
+          {project.demoUrl && (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button client:load className="gap-2">
+                <ExternalLink size={16} />
+                View Demo
+              </Button>
+            </a>
+          )}
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button client:load variant="outline" className="gap-2">
+                <Github size={16} />
+                View Code
+              </Button>
+            </a>
+          )}
+          {project.inProgress && (
+            <Badge client:load className="h-10 px-4 flex items-center">In Progress</Badge>
+          )}
+        </div>
+      </div>
+
+      <Separator client:load className="mb-12" />
+
+      {/* Overview section */}
+      <section class="mb-12" id="overview">
+        <h2 class="text-2xl font-bold mb-4">Overview</h2>
+        <p class="text-base leading-relaxed text-muted-foreground">
+          {project.overview}
+        </p>
+      </section>
+
+      {/* Challenge section */}
+      <section class="mb-12" id="challenge">
+        <h2 class="text-2xl font-bold mb-4">The Challenge</h2>
+        <p class="text-base leading-relaxed text-muted-foreground">
+          {project.challenge}
+        </p>
+      </section>
+
+      {/* Solution section */}
+      <section class="mb-12" id="solution">
+        <h2 class="text-2xl font-bold mb-4">The Solution</h2>
+        <p class="text-base leading-relaxed text-muted-foreground">
+          {project.solution}
+        </p>
+      </section>
+
+      {/* Features section */}
+      <section class="mb-12" id="features">
+        <h2 class="text-2xl font-bold mb-4">Key Features</h2>
+        <ul class="space-y-2">
+          {project.features.map((feature, idx) => (
+            <li
+              class="flex items-start gap-3 text-muted-foreground"
+            >
+              <span class="text-primary font-bold mt-1 flex-shrink-0">
+                ✓
+              </span>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Technologies section */}
+      <section class="mb-12" id="technologies">
+        <h2 class="text-2xl font-bold mb-4">Technologies Used</h2>
+        <div class="flex flex-wrap gap-2">
+          {project.technologies.map((tech) => (
+            <Badge client:load key={tech} variant="secondary">
+              {tech}
+            </Badge>
+          ))}
+        </div>
+      </section>
+
+      {/* Related Projects */}
+      <RelatedProjects client:visible projects={relatedProjects} />
+
+      <Separator client:load className="my-12" />
+
+      {/* Footer with navigation */}
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
+        <a href="/">
+          <Button client:load variant="outline" className="gap-2 w-full sm:w-auto">
+            <ArrowLeft size={16} />
+            Back to Portfolio
+          </Button>
+        </a>
+
+        {(project.demoUrl || project.githubUrl) && (
+          <div class="flex gap-3">
+            {project.demoUrl && (
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button client:load size="sm" className="gap-2">
+                  <ExternalLink size={14} />
+                  Demo
+                </Button>
+              </a>
+            )}
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button client:load size="sm" variant="outline" className="gap-2">
+                  <Github size={14} />
+                  Code
+                </Button>
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+    </article>
+  </div>
+</BaseLayout>
