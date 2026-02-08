@@ -64,6 +64,7 @@ export const techCategories = {
     "JavaScript",
     "Tailwind CSS",
     "Shadcn UI",
+    "Astro",
     "Vite",
     "ESLint",
     "Prettier",
