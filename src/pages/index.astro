@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { HeaderSection } from '@/components/common/header-section';
+import { AboutCard } from '@/components/common/about-card';
+import { CertificatesList } from '@/components/common/certificates-list';
+import { ExperienceTimeline } from '@/components/common/experience-timeline';
+import { TechStackCategories } from '@/components/common/tech-stack-categories';
+import { ProjectList } from '@/components/common/project-list';
+import { getProjectsList } from '@/lib/projects-data';
+import {
+  certificates,
+  experienceItems,
+  techCategories,
+} from '@/lib/portfolio-data';
+
+const projects = getProjectsList();
+---
+
+<BaseLayout>
+  <div class="h-full max-w-4xl mx-auto py-5 space-y-5 px-5 lg:px-0 pb-20 relative">
+    <HeaderSection
+      client:visible
+      name="Kaarlo Sasiang"
+      location="Lupon, Davao Oriental, Philippines"
+      title="Full Stack Web Developer"
+    />
+    <div class="grid sm:grid-cols-12 gap-3 items-start mt-5">
+      <div class="col-span-12 lg:col-span-8 flex flex-col gap-3">
+        <AboutCard client:visible />
+        <TechStackCategories client:load categories={techCategories} />
+        <ProjectList client:load projects={projects} />
+      </div>
+      <div class="col-span-12 lg:col-span-4 flex flex-col gap-3">
+        <ExperienceTimeline client:load items={experienceItems} />
+        <CertificatesList client:idle items={certificates} />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
