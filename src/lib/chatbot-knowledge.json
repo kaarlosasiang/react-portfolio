@@ -1,0 +1,190 @@
+{
+  "person": {
+    "name": "Kaarlo Sasiang",
+    "title": "Full Stack Web Developer",
+    "location": "Davao, Philippines",
+    "bio": "Kaarlo Sasiang is a Full Stack Web Developer based in Davao, Philippines. He specializes in building modern web applications with React, Next.js, TypeScript, and Node.js. He graduated with a BS in Information Technology from Davao Oriental State University in 2025.",
+    "contact": {
+      "github": "https://github.com/kaarlosasiang",
+      "facebook": "https://web.facebook.com/karlosasiang",
+      "phone": "+63 935 578 3731",
+      "email": "sasiang64@gmail.com",
+      "note": "Visitors can reach out via the contact section on the portfolio or through GitHub."
+    },
+    "availability": "Currently employed as a Full Stack Web Developer at Camillians Home Health Services (2025 - Present). Open to freelance collaborations and interesting side projects.",
+    "born": "January 14, 2003"
+  },
+  "experience": [
+    {
+      "title": "Full Stack Web Developer",
+      "company": "Camillians Home Health Services",
+      "period": "2025 - Present",
+      "description": "Building and maintaining full stack web applications for a home health services company.",
+      "type": "freelance"
+    },
+    {
+      "title": "Full Stack Web Developer",
+      "company": "Green Home Improvements Plus",
+      "period": "2023 - 2025",
+      "description": "Developed full stack solutions for a home improvements company.",
+       "type": "freelance"
+    },
+    {
+      "title": "Frontend / WordPress Developer",
+      "company": "Wozinga Pty. Ltd.",
+      "period": "2021 - 2023",
+      "description": "Built and maintained frontend interfaces and WordPress sites for an Australian company."
+    },
+    {
+      "title": "BS Information Technology",
+      "company": "Davao Oriental State University",
+      "period": "2021 - 2025",
+      "description": "Graduated with a degree in Information Technology."
+    },
+    {
+      "title": "Started coding",
+      "company": "Wrote first line of code",
+      "period": "2020",
+      "description": "Began programming journey in 2020."
+    }
+  ],
+  "skills": {
+    "Frontend": [
+      "React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS",
+      "Shadcn UI", "Astro", "Vite", "ESLint", "Prettier"
+    ],
+    "Backend": [
+      "Node.js", "Express", "MongoDB", "Prisma", "OAuth",
+      "JWT", "REST", "Firebase", "Appwrite", "Supabase"
+    ],
+    "DevOps": ["Docker", "GitHub Actions", "Vercel", "Render"],
+    "Tools": [
+      "Git", "GitHub", "VS Code", "WebStorm", "Postman",
+      "Trello", "Teams", "Discord", "Figma"
+    ]
+  },
+  "projects": [
+    {
+      "id": "1",
+      "title": "Accounting Software",
+      "slug": "accounting-software",
+      "status": "In Progress",
+      "description": "A comprehensive multi-tenant accounting software solution built as a thesis project for BS AgriBusiness Management.",
+      "tags": ["Next.js", "Express", "TypeScript", "Multi-tenant", "Better Auth", "Shadcn UI"],
+      "github": "https://github.com/kaarlosasiang/accounting-software",
+      "overview": "A comprehensive accounting software solution built as a thesis project for BS AgriBusiness Management. This multi-tenant application provides robust financial management tools tailored for agricultural businesses.",
+      "challenge": "Building a secure multi-tenant architecture that handles complex accounting operations while maintaining data isolation between clients, with role-based access control and real-time financial reporting.",
+      "solution": "Implemented a multi-tenant architecture using Next.js on the frontend with Express backend. Used Better Auth for secure authentication and role-based access.",
+      "features": [
+        "Multi-tenant architecture with complete data isolation",
+        "Role-based access control (RBAC)",
+        "Real-time financial dashboards",
+        "Automated invoice generation",
+        "Account reconciliation tools",
+        "Financial reporting and analytics"
+      ],
+      "technologies": ["Next.js", "Express.js", "TypeScript", "PostgreSQL", "Shadcn UI", "Better Auth"],
+      "results": "Production-ready accounting software used by agricultural businesses for financial management."
+    },
+    {
+      "id": "2",
+      "title": "TransitMaster",
+      "slug": "transit-master",
+      "status": "Completed",
+      "description": "A school vehicle management system for real-time GPS monitoring, route planning, and usage analytics.",
+      "tags": ["React", "Express", "Mapbox", "IoT"],
+      "github": "https://github.com/kaarlosasiang/transitmaster_frontend",
+      "overview": "A comprehensive vehicle management system designed for schools with real-time GPS tracking, intelligent route planning, and detailed usage analytics.",
+      "challenge": "Integrating real-time GPS data from multiple vehicles, displaying them on interactive maps, and providing route optimization for multiple bus routes simultaneously.",
+      "solution": "Built a React frontend with Mapbox for real-time vehicle tracking. Connected IoT devices on vehicles to an Express backend processing location data in real-time with WebSocket.",
+      "features": [
+        "Real-time GPS tracking of all vehicles",
+        "Interactive map visualization with Mapbox",
+        "Intelligent route optimization",
+        "Driver and admin dashboards",
+        "Usage analytics and reports"
+      ],
+      "technologies": ["React", "Express.js", "Mapbox API", "IoT/GPS hardware", "WebSocket", "Node.js"],
+      "results": "Deployed in a school with 15+ buses serving 2000+ students, reducing average transportation time by 20%."
+    },
+    {
+      "id": "3",
+      "title": "AceTrack",
+      "slug": "ace-track",
+      "status": "Completed",
+      "description": "Attendance management system for school organizations with member check-ins, event tracking, and role-based access.",
+      "tags": ["React", "Shadcn UI", "Auth", "Multi-tenant"],
+      "demo": "https://acetrack.vercel.app/",
+      "overview": "A modern attendance management system for school organizations that streamlines member tracking, event management, and attendance analytics.",
+      "challenge": "Handling multiple organizations with their own member bases, different access levels, and real-time attendance tracking without compromising performance or data security.",
+      "solution": "Developed a multi-tenant React application with role-based access control and a clean authentication system. Used Shadcn UI for a polished interface.",
+      "features": [
+        "Multi-organization support",
+        "Real-time member check-in",
+        "Event creation and management",
+        "Attendance analytics and reports",
+        "Role-based access control",
+        "Mobile-friendly interface",
+        "Export attendance to CSV"
+      ],
+      "technologies": ["React", "Shadcn UI", "TypeScript", "REST API"],
+      "results": "Used by 5+ school organizations with over 500 active members."
+    }
+  ],
+  "certificates": [
+    {
+      "title": "Proficiency Examination for Computer Programming",
+      "issuer": "DICT-XI",
+      "date": "2025"
+    },
+    {
+      "title": "DevFest 2025 Participant",
+      "issuer": "GDG Davao",
+      "date": "2025"
+    },
+    {
+      "title": "DevFest 2023 Participant",
+      "issuer": "GDG Davao",
+      "date": "2023"
+    },
+    {
+      "title": "DICT Python Programming Essential Course",
+      "issuer": "DICT-XI",
+      "date": "2023"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is Kaarlo's main tech stack?",
+      "answer": "Kaarlo's core stack is React / Next.js with TypeScript on the frontend, Node.js / Express on the backend, and Tailwind CSS + Shadcn UI for styling. He also works with databases like MongoDB, PostgreSQL (via Prisma), and BaaS platforms like Supabase and Firebase."
+    },
+    {
+      "question": "Is Kaarlo available for freelance work?",
+      "answer": "Kaarlo is currently employed full-time at Camillians Home Health Services. He may be open to interesting freelance collaborations or side projects. The best way to reach out is via GitHub or the contact section on his portfolio."
+    },
+    {
+      "question": "Where is Kaarlo located?",
+      "answer": "Kaarlo is based in Davao, Philippines."
+    },
+    {
+      "question": "How many years of experience does Kaarlo have?",
+      "answer": "Kaarlo started coding in 2020 and has been working professionally since 2021, giving him around 5 years of coding experience and 4+ years of professional web development experience."
+    },
+    {
+      "question": "What kind of projects does Kaarlo build?",
+      "answer": "Kaarlo builds full stack web applications — from multi-tenant SaaS platforms (accounting software, attendance systems) to real-time IoT dashboards (vehicle tracking). He is comfortable across the entire stack from database design to polished UI."
+    },
+    {
+      "question": "Does Kaarlo have experience with multi-tenant architecture?",
+      "answer": "Yes — two of his main projects (Accounting Software and AceTrack) are multi-tenant applications with full data isolation and role-based access control."
+    },
+    {
+      "question": "What is Kaarlo's educational background?",
+      "answer": "Kaarlo graduated with a BS in Information Technology from Davao Oriental State University in 2025."
+    },
+    {
+      "question": "What deployment platforms does Kaarlo use?",
+      "answer": "Kaarlo uses Vercel for frontend deployments, Render for backend services, Docker for containerization, and GitHub Actions for CI/CD pipelines."
+    }
+  ]
+}

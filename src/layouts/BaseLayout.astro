@@ -9,6 +9,7 @@ import '@fontsource/geist-mono/600.css';
 import '@fontsource/geist-mono/700.css';
 import '../styles/global.css';
 import { CustomDock } from '@/components/common/custom-dock';
+import { ChatbotWidget } from '@/components/common/chatbot-widget';
 
 export interface Props {
   title?: string;
@@ -70,5 +71,6 @@ const imageUrl = new URL(image, siteUrl).href;
   <body class="antialiased relative" style="font-family: var(--font-geist-sans)">
     <slot />
     <CustomDock client:load />
+    <ChatbotWidget client:load />
   </body>
 </html>
