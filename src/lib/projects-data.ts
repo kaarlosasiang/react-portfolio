@@ -34,6 +34,7 @@ export const projectsData: ProjectDetail[] = [
       "Shadcn UI",
     ],
     href: "/project/accounting-software",
+    demoUrl: "https://amfintrass.com/",
     githubUrl: "https://github.com/kaarlosasiang/accounting-software",
     inProgress: true,
     overview:
