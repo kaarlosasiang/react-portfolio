@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useAnimate } from "motion/react";
 import { MessageCircle, X, Send, Bot } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { streamChat, type ChatMessage } from "@/lib/chatbot-service";
@@ -33,6 +33,18 @@ export function ChatbotWidget() {
   const [isLoading, setIsLoading] = React.useState(false);
   const bottomRef = React.useRef<HTMLDivElement>(null);
   const inputRef = React.useRef<HTMLInputElement>(null);
+  const [fabScope, animateFab] = useAnimate();
+
+  // Wiggle the FAB every 8s to catch attention (only when chat is closed)
+  React.useEffect(() => {
+    if (isOpen) return;
+    const interval = setInterval(() => {
+      animateFab(fabScope.current, {
+        rotate: [0, -14, 14, -10, 10, -6, 6, 0],
+      }, { duration: 0.7, ease: "easeInOut" });
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [isOpen, animateFab, fabScope]);
 
   // Scroll to bottom when new messages arrive
   React.useEffect(() => {
@@ -218,6 +230,7 @@ export function ChatbotWidget() {
 
       {/* FAB Button */}
       <motion.button
+        ref={fabScope}
         onClick={() => setIsOpen((prev) => !prev)}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.92 }}

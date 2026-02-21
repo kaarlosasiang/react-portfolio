@@ -3,7 +3,14 @@
 import knowledge from "./chatbot-knowledge.json";
 
 const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
-const MODEL = "anthropic/claude-3.5-haiku";
+
+// Ordered fallback chain — tries each model in sequence on rate-limit/quota errors
+const MODELS = [
+  "meta-llama/llama-3.3-70b-instruct:free",
+  "openrouter/free",
+];
+
+const FALLBACK_STATUS_CODES = new Set([429, 503, 529]);
 
 function buildSystemPrompt(): string {
   return `You are a personal assistant embedded in ${knowledge.person.name}'s portfolio website. You know Kaarlo well — his background, skills, projects, and career. Speak naturally and confidently, as if you personally know him.
@@ -13,8 +20,10 @@ ${JSON.stringify(knowledge, null, 2)}
 Rules:
 - NEVER say phrases like "based on the information provided", "according to my data", "from the knowledge base", "the information I have", or any similar meta-references. Just answer directly and confidently.
 - Do not fabricate details that aren't in your knowledge above.
-- Be concise, warm, and direct. 1-2 short paragraphs is usually enough unless a detailed breakdown is asked for. But keep it short always.
+- Be concise, warm, and direct. 1 short paragraph is usually enough unless a detailed breakdown is asked for. But keep it short always.
+- Have some humor and personality! Kaarlo is friendly and approachable, so reflect that in your tone.
 - Make your best effort to answer all questions, even if the answer isn't explicitly in the knowledge. Use inference and reasoning based on what you know about Kaarlo.
+- You can use emojis based on the context
 - If asked something outside Kaarlo's professional background, politely steer back to the topic.
 - For contact, point to GitHub (${knowledge.person.contact.github}) or the contact section on this portfolio.
 - Current context: early 2026.`;
@@ -39,36 +48,53 @@ export async function streamChat(
     return;
   }
 
-  const payload = {
-    model: MODEL,
-    stream: true,
-    messages: [
-      { role: "system", content: buildSystemPrompt() },
-      ...messages,
-    ],
-  };
+  const systemPrompt = buildSystemPrompt();
+  let response: Response | null = null;
+  let lastError = "";
 
-  let response: Response;
-  try {
-    response = await fetch(OPENROUTER_API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-        "HTTP-Referer": window.location.origin,
-        "X-Title": "Kaarlo Sasiang Portfolio",
-      },
-      body: JSON.stringify(payload),
-    });
-  } catch {
-    onError("Network error — please check your connection and try again.");
+  for (const model of MODELS) {
+    try {
+      response = await fetch(OPENROUTER_API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+          "HTTP-Referer": window.location.origin,
+          "X-Title": "Kaarlo Sasiang Portfolio",
+        },
+        body: JSON.stringify({
+          model,
+          stream: true,
+          messages: [
+            { role: "system", content: systemPrompt },
+            ...messages,
+          ],
+        }),
+      });
+    } catch {
+      onError("Network error — please check your connection and try again.");
+      onDone();
+      return;
+    }
+
+    if (response.ok) break; // success — use this model
+
+    if (FALLBACK_STATUS_CODES.has(response.status)) {
+      // Rate-limited or overloaded — try next model
+      lastError = `${model} returned ${response.status}`;
+      response = null;
+      continue;
+    }
+
+    // Non-retryable error
+    const text = await response.text().catch(() => "");
+    onError(`API error (${response.status}): ${text || response.statusText}`);
     onDone();
     return;
   }
 
-  if (!response.ok) {
-    const text = await response.text().catch(() => "");
-    onError(`API error (${response.status}): ${text || response.statusText}`);
+  if (!response) {
+    onError(`All models are currently unavailable. Last error: ${lastError}`);
     onDone();
     return;
   }
