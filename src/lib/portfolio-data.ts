@@ -81,7 +81,7 @@ export const techCategories = {
     "Appwrite",
     "Supabase",
   ],
-  DevOps: ["Docker", "GitHub Actions", "Vercel", "Render"],
+  DevOps: ["Docker", "GitHub Actions", "Vercel", "Render", "DigitalOcean Droplets"],
   Tools: [
     "Git",
     "GitHub",
