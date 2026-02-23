@@ -28,7 +28,6 @@ Rules:
 - For contact, point to GitHub (${knowledge.person.contact.github}) or the contact section on this portfolio.
 - Current context: early 2026.`;
 }
-
 export type ChatMessage = {
   role: "user" | "assistant" | "system";
   content: string;
