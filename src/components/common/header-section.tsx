@@ -14,7 +14,7 @@ export function HeaderSection({ name, location, title }: HeaderSectionProps) {
     <div className="flex w-full justify-center md:justify-between">
       <div className="flex flex-col items-center md:flex-row gap-3 md:gap-6 lg:items-start space-x-6">
         <img
-          src="/kaarlo.jpg"
+          src="/kaarlo.png"
           alt={`${name}'s profile picture`}
           width={150}
           height={150}
