@@ -6,6 +6,7 @@ const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
 
 // Ordered fallback chain — tries each model in sequence on rate-limit/quota errors
 const MODELS = [
+  "cohere/north-mini-code:free",
   "openai/gpt-oss-120b:free",
   "openrouter/free",
 ];
