@@ -12,7 +12,7 @@ type HeaderSectionProps = {
 export function HeaderSection({ name, location, title }: HeaderSectionProps) {
   return (
     <div className="flex w-full justify-center md:justify-between">
-      <div className="flex flex-col items-center md:flex-row gap-3 md:gap-6 lg:items-start space-x-6">
+      <div className="flex flex-col items-center md:flex-row gap-3 md:gap-6 lg:items-start">
         <img
           src="/kaarlo.png"
           alt={`${name}'s profile picture`}

@@ -39,14 +39,14 @@ export function ProjectList({ projects }: ProjectListProps) {
                     )}
                   </div>
                 </div>
-                <p className="mt-1 text-xs text-muted-foreground">
+                <p className="mt-1 text-xs text-muted-foreground line-clamp-2">
                   {proj.description}
                 </p>
                 <div className="mt-2 flex flex-wrap gap-1">
                   {proj.tags.map((tag, tIdx) => (
                     <span
                       key={tIdx}
-                      className="px-2 py-0.5 rounded-md border text-[10px] text-muted-foreground"
+                      className="px-2 py-0.5 rounded-md border text-[10px] font-mono text-muted-foreground"
                     >
                       {tag}
                     </span>

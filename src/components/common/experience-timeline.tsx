@@ -28,12 +28,12 @@ export function ExperienceTimeline({ items }: ExperienceTimelineProps) {
           <div className="space-y-6">
             {items.map((item, index) => (
               <div key={index} className="relative pl-6">
-                <div className="border-2 bg-white hover:bg-foreground absolute left-0 top-1 flex size-3 items-center justify-center rounded-full transition-colors" />
+                <div className="border-2 bg-background hover:bg-foreground absolute left-0 top-1 flex size-3 items-center justify-center rounded-full transition-colors" />
                 <h3 className="font-semibold text-sm">{item.title}</h3>
                 <div className="flex justify-between items-center mt-2">
                   <p className="text-xs text-muted-foreground">{item.company}</p>
                   <Badge variant={"outline"}>
-                    <span className="text-[10px] text-gray-500 font-semibold">{item.period}</span>
+                    <span className="text-[10px] text-muted-foreground font-semibold">{item.period}</span>
                   </Badge>
                 </div>
               </div>

@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CertificateModal } from "./certificate-modal";
-import { Briefcase, Eye } from "lucide-react";
+import { Award, Eye } from "lucide-react";
 
 export type CertificateItem = {
   title: string;
@@ -26,7 +26,7 @@ export function CertificatesList({ items }: CertificatesListProps) {
       <Card className="col-span-12 md:col-span-4">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Briefcase size={16} />
+            <Award size={16} />
             <span className="font-bold">Certificates</span>
           </CardTitle>
         </CardHeader>
@@ -49,7 +49,7 @@ export function CertificatesList({ items }: CertificatesListProps) {
                 <div className="flex justify-between items-center mt-2">
                   <p className="text-xs text-muted-foreground">{item.issuer}</p>
                   <Badge variant={"outline"}>
-                    <span className="text-[10px] text-gray-500 font-semibold">{item.date}</span>
+                    <span className="text-[10px] text-muted-foreground font-semibold">{item.date}</span>
                   </Badge>
                 </div>
               </div>

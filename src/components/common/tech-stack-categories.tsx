@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ToolCase } from "lucide-react";
+import { Code2 } from "lucide-react";
 
 type CategoryMap = Record<string, string[]>;
 
@@ -15,7 +14,7 @@ export function TechStackCategories({ categories, className }: TechStackCategori
     <Card className={className ?? "col-span-12 md:col-span-8"}>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <ToolCase size={16} />
+          <Code2 size={16} />
           <span className="font-bold">Tech Stack</span>
         </CardTitle>
       </CardHeader>
@@ -26,9 +25,9 @@ export function TechStackCategories({ categories, className }: TechStackCategori
               <h4 className="text-sm font-semibold">{category}</h4>
               <div className="flex flex-wrap gap-2">
                 {items.map((item) => (
-                  <Badge key={item} variant="outline" className="text-[10px]">
+                  <span key={item} className="inline-flex items-center rounded-md border border-border bg-muted/50 px-2.5 py-1 text-[10px] font-mono text-foreground">
                     {item}
-                  </Badge>
+                  </span>
                 ))}
               </div>
             </div>
