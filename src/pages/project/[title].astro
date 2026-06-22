@@ -29,69 +29,43 @@ const relatedProjects = getRelatedProjects(project.id);
 
 <BaseLayout title={`${project.title} - Kaarlo Sasiang`} description={project.description}>
   <div class="min-h-screen bg-background">
-    {/* Mobile header */}
-    <div class="lg:hidden bg-muted/50 border-b sticky top-0 z-50">
-      <div class="flex items-center px-4 py-3">
+
+    {/* Unified sticky header */}
+    <div class="bg-background/80 backdrop-blur-sm border-b sticky top-0 z-50">
+      <div class="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
         <a href="/">
-          <Button client:load variant="ghost" size="sm" className="gap-2">
+          <Button client:load variant="ghost" size="sm" className="gap-2 -ml-2">
             <ArrowLeft size={16} />
-            <span class="hidden sm:inline">Back</span>
+            Back
           </Button>
         </a>
+        {project.inProgress && (
+          <Badge client:load variant="outline" className="text-xs">In Progress</Badge>
+        )}
       </div>
     </div>
 
-    {/* Desktop header with back button */}
-    <div class="hidden lg:block bg-muted/50 border-b sticky top-0 z-40">
-      <div class="max-w-3xl mx-auto px-4 py-4">
-        <a href="/">
-          <Button client:load variant="ghost" size="sm" className="gap-2">
-            <ArrowLeft size={16} />
-            Back to Portfolio
-          </Button>
-        </a>
-      </div>
-    </div>
+    <article class="max-w-3xl mx-auto px-4">
 
-    {/* Main content */}
-    <article class="max-w-3xl mx-auto px-4 py-8 lg:py-12">
-      {/* Hero section */}
-      <div class="mb-12">
-        <div class="mb-4 flex flex-wrap gap-2">
+      {/* Hero */}
+      <div class="mb-10 pt-8">
+        <div class="flex flex-wrap gap-2 mb-5">
           {project.tags.map((tag) => (
-            <Badge client:load key={tag} variant="outline">
-              {tag}
-            </Badge>
+            <Badge client:load key={tag} variant="outline">{tag}</Badge>
           ))}
         </div>
 
-        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-4">
           {project.title}
         </h1>
 
-        <p class="text-lg text-muted-foreground mb-6">
+        <p class="text-lg text-muted-foreground leading-relaxed mb-6 max-w-2xl">
           {project.description}
         </p>
 
-        {/* Featured Image */}
-        {project.image && (
-          <div class="relative max-h-64 sm:max-h-80 aspect-video w-full rounded-lg overflow-hidden mb-6 bg-muted">
-            <img
-              src={project.image}
-              alt={project.title}
-              class="w-full h-full object-cover"
-            />
-          </div>
-        )}
-
-        {/* CTA buttons */}
         <div class="flex flex-wrap gap-3 mb-8">
           {project.demoUrl && (
-            <a
-              href={project.demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
               <Button client:load className="gap-2">
                 <ExternalLink size={16} />
                 View Demo
@@ -99,113 +73,123 @@ const relatedProjects = getRelatedProjects(project.id);
             </a>
           )}
           {project.githubUrl && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
               <Button client:load variant="outline" className="gap-2">
                 <Github size={16} />
                 View Code
               </Button>
             </a>
           )}
-          {project.inProgress && (
-            <Badge client:load className="h-10 px-4 flex items-center">In Progress</Badge>
-          )}
         </div>
+
+        {project.image && (
+          <div class="w-full aspect-video rounded-lg overflow-hidden bg-muted border border-border">
+            <img
+              src={project.image}
+              alt={project.title}
+              class="w-full h-full object-cover"
+            />
+          </div>
+        )}
       </div>
 
-      <Separator client:load className="mb-12" />
+<Separator client:load className="mb-10" />
 
-      {/* Overview section */}
-      <section class="mb-12" id="overview">
-        <h2 class="text-2xl font-bold mb-4">Overview</h2>
-        <p class="text-base leading-relaxed text-muted-foreground">
-          {project.overview}
-        </p>
-      </section>
+      {/* Narrative sections */}
+      <div class="space-y-10 mb-12">
+        <section id="overview">
+          <div class="flex items-baseline gap-3 mb-4">
+            <span class="text-xs font-mono text-muted-foreground tabular-nums select-none">01</span>
+            <h2 class="text-xl font-semibold tracking-tight">Overview</h2>
+          </div>
+          <p class="text-base leading-relaxed text-muted-foreground pl-7">
+            {project.overview}
+          </p>
+        </section>
 
-      {/* Challenge section */}
-      <section class="mb-12" id="challenge">
-        <h2 class="text-2xl font-bold mb-4">The Challenge</h2>
-        <p class="text-base leading-relaxed text-muted-foreground">
-          {project.challenge}
-        </p>
-      </section>
+        <section id="challenge">
+          <div class="flex items-baseline gap-3 mb-4">
+            <span class="text-xs font-mono text-muted-foreground tabular-nums select-none">02</span>
+            <h2 class="text-xl font-semibold tracking-tight">The Challenge</h2>
+          </div>
+          <p class="text-base leading-relaxed text-muted-foreground pl-7">
+            {project.challenge}
+          </p>
+        </section>
 
-      {/* Solution section */}
-      <section class="mb-12" id="solution">
-        <h2 class="text-2xl font-bold mb-4">The Solution</h2>
-        <p class="text-base leading-relaxed text-muted-foreground">
-          {project.solution}
-        </p>
-      </section>
+        <section id="solution">
+          <div class="flex items-baseline gap-3 mb-4">
+            <span class="text-xs font-mono text-muted-foreground tabular-nums select-none">03</span>
+            <h2 class="text-xl font-semibold tracking-tight">The Solution</h2>
+          </div>
+          <p class="text-base leading-relaxed text-muted-foreground pl-7">
+            {project.solution}
+          </p>
+        </section>
+      </div>
 
-      {/* Features section */}
+      {/* Key Features */}
       <section class="mb-12" id="features">
-        <h2 class="text-2xl font-bold mb-4">Key Features</h2>
-        <ul class="space-y-2">
+        <div class="flex items-baseline gap-3 mb-5">
+          <span class="text-xs font-mono text-muted-foreground tabular-nums select-none">04</span>
+          <h2 class="text-xl font-semibold tracking-tight">Key Features</h2>
+        </div>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 pl-7">
           {project.features.map((feature, idx) => (
-            <li
-              class="flex items-start gap-3 text-muted-foreground"
-            >
-              <span class="text-primary font-bold mt-1 flex-shrink-0">
-                ✓
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-[0.2rem] size-5 rounded-full border border-border flex items-center justify-center">
+                <span class="text-[10px] font-mono text-muted-foreground tabular-nums leading-none">
+                  {String(idx + 1).padStart(2, '0')}
+                </span>
               </span>
-              <span>{feature}</span>
+              <span class="text-sm text-muted-foreground leading-relaxed">{feature}</span>
             </li>
           ))}
         </ul>
       </section>
 
-      {/* Technologies section */}
+      {/* Technologies */}
       <section class="mb-12" id="technologies">
-        <h2 class="text-2xl font-bold mb-4">Technologies Used</h2>
-        <div class="flex flex-wrap gap-2">
+        <div class="flex items-baseline gap-3 mb-5">
+          <span class="text-xs font-mono text-muted-foreground tabular-nums select-none">05</span>
+          <h2 class="text-xl font-semibold tracking-tight">Technologies</h2>
+        </div>
+        <div class="pl-7 flex flex-wrap gap-2">
           {project.technologies.map((tech) => (
-            <Badge client:load key={tech} variant="secondary">
+            <span class="inline-flex items-center rounded-md border border-border bg-muted/50 px-2.5 py-1 text-xs font-mono text-foreground">
               {tech}
-            </Badge>
+            </span>
           ))}
         </div>
       </section>
 
-      {/* Related Projects */}
+      {/* More Projects */}
       <RelatedProjects client:visible projects={relatedProjects} />
 
-      <Separator client:load className="my-12" />
+      <Separator client:load className="mb-8" />
 
-      {/* Footer with navigation */}
-      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
+      {/* Footer nav */}
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-16">
         <a href="/">
-          <Button client:load variant="outline" className="gap-2 w-full sm:w-auto">
+          <Button client:load variant="ghost" size="sm" className="gap-2 -ml-2">
             <ArrowLeft size={16} />
             Back to Portfolio
           </Button>
         </a>
 
         {(project.demoUrl || project.githubUrl) && (
-          <div class="flex gap-3">
+          <div class="flex gap-2">
             {project.demoUrl && (
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button client:load size="sm" className="gap-2">
+              <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                <Button client:load size="sm" variant="outline" className="gap-2">
                   <ExternalLink size={14} />
                   Demo
                 </Button>
               </a>
             )}
             {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button client:load size="sm" variant="outline" className="gap-2">
+              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                <Button client:load size="sm" variant="ghost" className="gap-2">
                   <Github size={14} />
                   Code
                 </Button>
@@ -214,6 +198,7 @@ const relatedProjects = getRelatedProjects(project.id);
           </div>
         )}
       </div>
+
     </article>
   </div>
 </BaseLayout>

@@ -10,8 +10,8 @@ export function RelatedProjects({ projects }: RelatedProjectsProps) {
   if (projects.length === 0) return null;
 
   return (
-    <section className="my-16 pt-8 border-t">
-      <h2 className="text-2xl font-bold mb-6">Related Projects</h2>
+    <section className="mb-12 pt-10 border-t border-border">
+      <h2 className="text-xl font-semibold tracking-tight mb-5">More Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((project) => (
           <a key={project.id} href={`/project/${project.slug}`}>

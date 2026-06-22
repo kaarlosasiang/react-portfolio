@@ -21,10 +21,10 @@ export type ProjectDetail = {
 export const projectsData: ProjectDetail[] = [
   {
     id: "1",
-    title: "Accounting Software",
+    title: "AMFINTRASS",
     slug: "accounting-software",
     description:
-      "Accounting software thesis for BS AgriBusiness Management; I was hired to build it.",
+      "An integrated enterprise management software for Philippine farmers, MSMEs, and agricultural cooperatives, automating accounting, inventory, and financial monitoring to replace error-prone manual recordkeeping.",
     tags: [
       "Next.js",
       "Express",
@@ -38,18 +38,19 @@ export const projectsData: ProjectDetail[] = [
     githubUrl: "https://github.com/kaarlosasiang/accounting-software",
     inProgress: true,
     overview:
-      "A comprehensive accounting software solution built as a thesis project for BS AgriBusiness Management. This multi-tenant application provides robust financial management tools tailored for agricultural businesses.",
+      "AMFINTRASS is an integrated enterprise management software developed to address the widespread reliance on manual recordkeeping among Philippine SMEs, farmers, and agricultural cooperatives. Despite rapid growth in digital payment adoption, back-office processes remained largely manual — causing errors, inefficiency, and difficulties complying with government regulations. The system automates accounting, inventory, and financial monitoring to improve efficiency, accuracy, and support digital transformation among Philippine enterprises. Developed under an Agile methodology with pilot user collaboration and structured usability evaluation.",
     challenge:
-      "The main challenge was building a secure multi-tenant architecture that could handle complex accounting operations while maintaining data isolation between clients. Additionally, the system needed to support role-based access control and real-time financial reporting.",
+      "Many SMEs globally and in the Philippines still rely on manual recordkeeping, leading to errors, inefficiency, and compliance difficulties with government regulations. Farmers lacked digital tools to organize income and expenses; MSMEs struggled with paperwork and transparency in daily financial activities; agricultural cooperatives had no streamlined way to manage member transactions and reporting. The challenge was building a single integrated platform that could serve these distinct user types, each with different workflows and access requirements.",
     solution:
-      "Implemented a multi-tenant architecture using Next.js on the frontend with Express backend. Used Better Auth for secure authentication and role-based access. Designed a normalized database schema that efficiently handles multi-tenancy while maintaining data integrity.",
+      "Built as a multi-tenant web application using Next.js, Express, and PostgreSQL, with Better Auth handling role-based access for different user types — farmers, MSMEs, and cooperative administrators. The system automates accounting workflows, inventory tracking, and financial reporting. Developed iteratively using Agile methodology, with pilot user testing and structured feedback loops to validate usability and impact before tech transfer to target beneficiaries.",
     features: [
+      "Automated accounting and financial monitoring",
+      "Inventory management and transaction tracking",
+      "Income and expense organization for farmers",
+      "Member transaction management for agricultural cooperatives",
+      "Financial reporting and government compliance tools",
+      "Role-based access for farmers, MSMEs, and cooperatives",
       "Multi-tenant architecture with complete data isolation",
-      "Role-based access control (RBAC)",
-      "Real-time financial dashboards",
-      "Automated invoice generation",
-      "Account reconciliation tools",
-      "Financial reporting and analytics",
     ],
     technologies: [
       "Next.js",
@@ -60,7 +61,7 @@ export const projectsData: ProjectDetail[] = [
       "Better Auth",
     ],
     results:
-      "Successfully delivered a production-ready accounting software that is currently being used by agricultural businesses for their financial management needs.",
+      "Currently in active use by farmers, MSMEs, and agricultural cooperatives in the Philippines. The system replaces manual recordkeeping workflows, reducing errors and improving financial transparency. Validated through pilot user testing with structured feedback and performance metrics, and documented for academic publication to support research on digital transformation in Philippine agribusiness.",
     image: "/am-fintrass_preview.png",
     relatedProjects: ["2", "3"],
   },
@@ -69,33 +70,36 @@ export const projectsData: ProjectDetail[] = [
     title: "TransitMaster",
     slug: "transit-master",
     description:
-      "TransitMaster is a school vehicle management system for real-time monitoring, route planning, and usage analytics to keep transportation safe and organized.",
-    tags: ["React", "Express", "Mapbox", "IoT"],
+      "A hardware and web-based vehicle scheduling and monitoring system for Davao Oriental State University, combining real-time GPS tracking with route deviation alerts and centralized reservation management.",
+    tags: ["React", "Express", "MongoDB", "Shadcn UI", "IoT", "ESP32"],
     href: "/project/transit-master",
     githubUrl: "https://github.com/kaarlosasiang/transitmaster_frontend",
     overview:
-      "TransitMaster is a comprehensive vehicle management system designed specifically for schools. It provides real-time GPS tracking, intelligent route planning, and detailed usage analytics to ensure safe and efficient school transportation.",
+      "TransitMaster is a hardware and web-based system developed to address the challenges of manual vehicle scheduling and monitoring within Davao Oriental State University. The system allows university staff and faculty to register and book vehicle reservations, displays vehicle and driver availability, schedules and assigns vehicles and drivers, tracks vehicle routes in real time, notifies administrators of route deviations, and stores vehicle location and travel history for monthly reports. The Agile methodology was applied to ensure iterative development and continuous improvement.",
     challenge:
-      "Integrating real-time GPS data from multiple vehicles, displaying them on interactive maps, and providing route optimization for multiple bus routes running simultaneously presented significant technical challenges.",
+      "The absence of a centralized system for scheduling and tracking vehicles resulted in a lack of transparency regarding vehicle and driver availability, and limited capability to monitor whether drivers adhered to assigned routes. Manual processes created scheduling inefficiencies and reduced accountability across university transportation operations.",
     solution:
-      "Built a React frontend with Mapbox for real-time vehicle tracking and route visualization. Connected IoT devices on vehicles to an Express backend that processes location data in real-time. Implemented efficient route optimization algorithms using geographic data.",
+      "The web-based component was built with ReactJS, Tailwind CSS, Shadcn UI, ExpressJS, and MongoDB, providing a scalable and accessible platform for reservation management and scheduling. The hardware component for real-time vehicle tracking was developed using an ESP32 microcontroller, Neo-6M GPS module, and SIM800L GSM module, enabling live route monitoring and deviation detection.",
     features: [
-      "Real-time GPS tracking of all vehicles",
-      "Interactive map visualization with Mapbox",
-      "Intelligent route optimization",
-      "Driver and admin dashboards",
-      "Usage analytics and reports",
+      "Vehicle reservation booking for university staff and faculty",
+      "Real-time vehicle and driver availability display",
+      "Vehicle and driver scheduling and assignment",
+      "Real-time GPS route tracking via ESP32 hardware",
+      "Route deviation detection and administrator notifications",
+      "Vehicle location and travel history storage for monthly reports",
     ],
     technologies: [
       "React",
+      "Tailwind CSS",
+      "Shadcn UI",
       "Express.js",
-      "Mapbox API",
-      "IoT/GPS hardware",
-      "WebSocket for real-time updates",
-      "Node.js",
+      "MongoDB",
+      "ESP32",
+      "Neo-6M GPS",
+      "SIM800L GSM",
     ],
     results:
-      "Deployed in a school with 15+ buses serving 2000+ students, reducing average transportation time by 20% and improving safety monitoring.",
+      "Evaluated using ISO/IEC 25010 standards across 15 respondents — faculty, drivers, and administrators. Mean ratings of 4.33 (faculty), 3.72 (drivers), and 4.27 (administrators) indicate users generally agreed or strongly agreed that the system is functional, user-friendly, and reliable. TransitMaster serves as an effective solution for university vehicle scheduling and tracking.",
     image: "/transit-master_preview.png",
     relatedProjects: ["1", "3"],
   },
@@ -105,7 +109,7 @@ export const projectsData: ProjectDetail[] = [
     slug: "ace-track",
     description:
       "Attendance management system for a school organization with member check-ins, event tracking, and role-based access.",
-    tags: ["React", "Shadcn UI", "Auth", "Multi-tenant"],
+    tags: ["React", "Shadcn UI", "TypeScript", "Multi-tenant"],
     href: "/project/ace-track",
     demoUrl: "https://acetrack.vercel.app/",
     overview:
@@ -125,18 +129,56 @@ export const projectsData: ProjectDetail[] = [
     ],
     technologies: [
       "React",
-      "Shadcn UI",
       "TypeScript",
-      "Authentication system",
-      "REST API",
+      "Shadcn UI",
+      "Vercel",
     ],
     results:
       "Currently used by 5+ school organizations with over 500 active members tracking attendance across multiple events.",
     image: "/acetrack_preview.png",
     relatedProjects: ["1", "2"],
   },
+  {
+    id: "4",
+    title: "Klasee",
+    slug: "klasee",
+    description:
+      "An offline-first classroom management LMS for educational institutions, covering courses, attendance, assessments, and file storage across instructor and student roles.",
+    tags: ["Next.js", "Express", "MongoDB", "Shadcn UI", "PWA", "TypeScript"],
+    href: "/project/klasee",
+    githubUrl: "https://github.com/kaarlosasiang/klasee",
+    inProgress: true,
+    overview:
+      "Klasee is an offline-first classroom workflow platform built as a pnpm monorepo. It provides educational institutions with a full LMS covering courses, sections, attendance, assessments (quizzes and assignments), enrollments, announcements, and file storage via Google Drive and Cloudinary. Designed with PWA readiness to remain usable in unstable connectivity environments common in educational settings.",
+    challenge:
+      "Building a reliable LMS for environments with unstable internet connectivity required an offline-first architecture that could sync data seamlessly when a connection is restored. The platform also needed to support distinct instructor and student workflows within a single application, with strict role-based access, shared validation logic, and a shared UI component library maintained across a monorepo.",
+    solution:
+      "Architected as a pnpm monorepo with a Next.js 16 App Router frontend and an Express 5 API backend. Better Auth handles authentication and RBAC for instructor, student, and admin roles. Shared Zod validators are used across both the frontend and backend for consistent data validation. The offline-first approach uses a sync-ready architecture with PWA capabilities built in from the start.",
+    features: [
+      "Course and section management for instructors",
+      "Offline-first attendance tracking with sync",
+      "Quiz and assignment creation and submission",
+      "Student enrollment and grade management",
+      "Announcements and messaging system",
+      "File storage via Google Drive and Cloudinary",
+      "Role-based dashboards for instructors and students",
+      "PWA support for low-connectivity environments",
+    ],
+    technologies: [
+      "Next.js 16",
+      "Express 5",
+      "MongoDB",
+      "Better Auth",
+      "Zustand",
+      "Shadcn UI",
+      "TypeScript",
+      "pnpm Workspaces",
+    ],
+    image: "/klasee_preview.png",
+    relatedProjects: ["3", "2"],
+  },
   // {
-  //   id: "4",
+  //   id: "5",
   //   title: "Portfolio Website",
   //   slug: "portfolio-website",
   //   description:
